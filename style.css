@@ -1,0 +1,8 @@
+#unas{
+    width: 70%;
+}
+.bodyContent{
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;  
+}
