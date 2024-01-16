@@ -6,55 +6,88 @@ let app=Vue.createApp({
                     id: 0,
                     name: '小花束ＡＢ',
                     price: 350,
-                    image: "0"
+                    image: "0",
+                    type:"mothers"
                 },
                 {
                     id: 1,
                     name: '小花束Ａ',
                     price: 199,
-                    image: "1"
+                    image: "1",
+                    type:"mothers"
                 },
                 {
                     id: 2,
                     name: '小花束Ｂ',
                     price: 199,
-                    image: "2"
+                    image: "2",
+                    type:"mothers"
                 },
                 {
                     id: 3,
                     name: '玻璃罩Ａ',
                     price: 1000,
-                    image: 3
+                    image: 3,
+                    type:"mothers"
                 },
                 {
                     id: 4,
                     name: '玻璃罩B',
                     price: 1000,
-                    image: 5
+                    image: 5,
+                    type:"mothers"
                 },
                 {
                     id: 5,
                     name: '玻璃罩C',
                     price: 1000,
-                    image: 10
+                    image: 10,
+                    type:"mothers"
                 },
 
                 {
                     id: 7,
                     name: '花束Ａ',
                     price: 1000,
-                    image: 13
+                    image: 13,
+                    type:"mothers"
                 },
                 {
                     id: 8,
                     name: '花束Ｂ',
                     price: 1000,
-                    image: 14
+                    image: 14,
+                    type:"mothers"
                 },
             ],
             cart: [],
             totalPrice:0,
-
+            productType:[
+                {
+                    type:"basin",
+                    typeName:"盆器"
+                },
+                {
+                    type:"boquet700",
+                    typeName:"700花束"
+                },
+                {
+                    type:"boquet1200",
+                    typeName:"1200花束"
+                },
+                {
+                    type:"boquetWedding",
+                    typeName:"新娘捧花"
+                },
+                {
+                    type:"glass",
+                    typeName:"玻璃罩"
+                },
+                {
+                    type:"mothers",
+                    typeName:"親愛的媽媽"
+                },
+            ]
         }
     },
     methods: {
@@ -132,6 +165,7 @@ app.component('item-in-menu',{
     props:['menu',],
     data(){
         return {
+
         }
     },
     methods:{
