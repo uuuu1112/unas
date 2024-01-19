@@ -1,7 +1,9 @@
 let app=Vue.createApp({
     data() {
         return {
+    
             menu: [
+                
                 {
                     id: 0,
                     name: '小花束ＡＢ',
@@ -141,6 +143,7 @@ let app=Vue.createApp({
 
 app.component('item-in-menu',{
     template:`
+
     <div class="row row-cols-4 mt-4">
         <div class="col justify-content-center text-center" 
             v-for="(item,index) in menu" 
@@ -156,18 +159,19 @@ app.component('item-in-menu',{
                 <div class="p-3">
                     <h5 class="item-name">{{item.name}}</h5>
                     <h6 class="item-price">$ {{item.price}}</h6>
-                    <button type="button" class="add-cart" @click="addProduct(item.id)">加入購物車</button>
+                    <button type="button" class="btn btn-primary" @click="addProduct(item.id)">加入試算</button>
                 </div>
             </div>
         </div>
     </div>
     `,
-    props:['menu',],
+    props:['menu'],
     data(){
-        return {
-
+        return{
+            
         }
     },
+
     methods:{
         addProduct(id) {
             this.$emit("addProductC",id)
@@ -182,14 +186,18 @@ app.component('item-in-cart',{
             <div class="order-item mb-4 " v-for="(item,index) in cart" :key="index" >
 
                 <div class="order-item-content ">
-                    <h5>
-                        {{item.name}} - $ {{item.price}}
-                        <button type="button" class="remove-icon" @click="removeItem(item.id)">X</button>
+                    <h5 class="order-item-detail">
+                        <p class="order-item-desp">{{item.name}} - $ {{item.price}}</p>
+
+                        <button type="button" class="close close-item" aria-label="Close" @click="removeItem(item.id)">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
                     </h5>
 
-                    <p>
+                    <p class="order-item-quantity">
                         <button type="button" class="add" @click="addItem(item.id)">+</button>
-                        {{item.quantity}}
+                        <p class="item-quantity">{{item.quantity}}</p>
                         <button type=button class="remove" @click="reduceItem(item.id)">-</button>
                     </p>
                 </div>
@@ -200,7 +208,7 @@ app.component('item-in-cart',{
 
         <div class="cart-empty" v-else>
             <p class="text-center">
-                購物車是空的
+                沒有選擇商品
             </p>
         </div>
 

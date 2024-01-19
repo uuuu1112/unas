@@ -6,3 +6,32 @@
     /* 水平置中 */
     justify-content: center;  
 }
+.order-item-detail{
+    display: flex;
+}
+.order-item-desp{
+    margin-left: 20px;
+    width: 380px;
+}
+.close-item{
+    width:40px
+}
+.order-item-quantity{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+.add{
+    width: 30px;
+    height:30px
+}
+.remove{
+    width: 30px;
+    height:30px
+}
+.item-quantity{
+    width: 30px;
+    height:30px;
+
+}
+
